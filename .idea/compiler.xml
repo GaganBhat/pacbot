@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="auth-service" />
+        <module name="awsrules" />
+        <module name="pacman-qualys-enricher" />
+        <module name="api-commons" />
+        <module name="compliance-service" />
+        <module name="azure-discovery" />
+        <module name="notification-service" />
+        <module name="statistics-service" />
+        <module name="admin-service" />
+        <module name="vulnerability-service" />
+        <module name="recommendation-enricher" />
+        <module name="pacman-cloud-notifications" />
+        <module name="inventory" />
+        <module name="asset-service" />
+        <module name="config" />
+        <module name="rule-engine" />
+        <module name="data-shipper" />
+        <module name="batch-commons" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="admin-service" target="1.8" />
+      <module name="api" target="1.5" />
+      <module name="api-commons" target="1.8" />
+      <module name="asset-service" target="1.8" />
+      <module name="auth-service" target="1.8" />
+      <module name="awsrules" target="1.8" />
+      <module name="azure-discovery" target="1.8" />
+      <module name="batch-commons" target="1.8" />
+      <module name="commons" target="1.5" />
+      <module name="compliance-service" target="1.8" />
+      <module name="config" target="1.8" />
+      <module name="data-shipper" target="1.8" />
+      <module name="inventory" target="1.8" />
+      <module name="jobs" target="1.5" />
+      <module name="notification-service" target="1.8" />
+      <module name="pacbot" target="1.5" />
+      <module name="pacman-cloud-notifications" target="1.8" />
+      <module name="pacman-qualys-enricher" target="1.8" />
+      <module name="recommendation-enricher" target="1.8" />
+      <module name="rule-engine" target="1.8" />
+      <module name="statistics-service" target="1.8" />
+      <module name="vulnerability-service" target="1.8" />
+      <module name="webapp" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="admin-service" options="-parameters" />
+      <module name="api-commons" options="-parameters" />
+      <module name="asset-service" options="-parameters" />
+      <module name="auth-service" options="-parameters" />
+      <module name="compliance-service" options="-parameters" />
+      <module name="config" options="-parameters" />
+      <module name="notification-service" options="-parameters" />
+      <module name="statistics-service" options="-parameters" />
+      <module name="vulnerability-service" options="-parameters" />
+    </option>
+  </component>
+</project>

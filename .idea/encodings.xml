@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/api/pacman-api-admin/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/api/pacman-api-asset/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/api/pacman-api-auth/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/api/pacman-api-compliance/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/api/pacman-api-config/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/api/pacman-api-notifications/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/api/pacman-api-statistics/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/api/pacman-api-vulnerability/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/commons/pac-api-commons/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/commons/pac-batch-commons/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jobs/pacman-awsrules/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jobs/pacman-cloud-discovery/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jobs/pacman-cloud-notifications/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jobs/pacman-rule-engine-2.0/src/main/java" charset="UTF-8" />
+  </component>
+</project>

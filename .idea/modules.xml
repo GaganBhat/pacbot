@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/api/pacman-api-admin/admin-service.iml" filepath="$PROJECT_DIR$/api/pacman-api-admin/admin-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/api/api.iml" filepath="$PROJECT_DIR$/api/api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commons/pac-api-commons/api-commons.iml" filepath="$PROJECT_DIR$/commons/pac-api-commons/api-commons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/api/pacman-api-asset/asset-service.iml" filepath="$PROJECT_DIR$/api/pacman-api-asset/asset-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/api/pacman-api-auth/auth-service.iml" filepath="$PROJECT_DIR$/api/pacman-api-auth/auth-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jobs/pacman-awsrules/awsrules.iml" filepath="$PROJECT_DIR$/jobs/pacman-awsrules/awsrules.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jobs/azure-discovery/azure-discovery.iml" filepath="$PROJECT_DIR$/jobs/azure-discovery/azure-discovery.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commons/pac-batch-commons/batch-commons.iml" filepath="$PROJECT_DIR$/commons/pac-batch-commons/batch-commons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commons/commons.iml" filepath="$PROJECT_DIR$/commons/commons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/api/pacman-api-compliance/compliance-service.iml" filepath="$PROJECT_DIR$/api/pacman-api-compliance/compliance-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/api/pacman-api-config/config.iml" filepath="$PROJECT_DIR$/api/pacman-api-config/config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jobs/pacman-data-shipper/data-shipper.iml" filepath="$PROJECT_DIR$/jobs/pacman-data-shipper/data-shipper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jobs/pacman-cloud-discovery/inventory.iml" filepath="$PROJECT_DIR$/jobs/pacman-cloud-discovery/inventory.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jobs/jobs.iml" filepath="$PROJECT_DIR$/jobs/jobs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/api/pacman-api-notifications/notification-service.iml" filepath="$PROJECT_DIR$/api/pacman-api-notifications/notification-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pacbot.iml" filepath="$PROJECT_DIR$/pacbot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jobs/pacman-cloud-notifications/pacman-cloud-notifications.iml" filepath="$PROJECT_DIR$/jobs/pacman-cloud-notifications/pacman-cloud-notifications.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jobs/pacman-qualys-enricher/pacman-qualys-enricher.iml" filepath="$PROJECT_DIR$/jobs/pacman-qualys-enricher/pacman-qualys-enricher.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jobs/recommendation-enricher/recommendation-enricher.iml" filepath="$PROJECT_DIR$/jobs/recommendation-enricher/recommendation-enricher.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jobs/pacman-rule-engine-2.0/rule-engine.iml" filepath="$PROJECT_DIR$/jobs/pacman-rule-engine-2.0/rule-engine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/api/pacman-api-statistics/statistics-service.iml" filepath="$PROJECT_DIR$/api/pacman-api-statistics/statistics-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/api/pacman-api-vulnerability/vulnerability-service.iml" filepath="$PROJECT_DIR$/api/pacman-api-vulnerability/vulnerability-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webapp/webapp.iml" filepath="$PROJECT_DIR$/webapp/webapp.iml" />
+    </modules>
+  </component>
+</project>
