@@ -68,38 +68,44 @@ public class CheckAdminMFAEnabled extends BaseRule {
 		List<UserDetail> userDetails = identityManagementClient.getAccountAuthorizationDetails().getUserDetailList();
 		List<UserDetail> adminUsers = new ArrayList<>();
 
-		for(UserDetail userDetail : userDetails)
-			if(isUserAdmin(userDetail, identityManagementClient))
+		for (UserDetail userDetail : userDetails)
+			if (isUserAdmin(userDetail, identityManagementClient))
 				adminUsers.add(userDetail);
 
+		for(UserDetail admin : adminUsers)
+			if (identityManagementClient.listMFADevices(
+					new ListMFADevicesRequest().withUserName(admin.getUserName()))
+				.getMFADevices().isEmpty())
+				return
+						new RuleResult(PacmanSdkConstants.STATUS_FAILURE, PacmanRuleConstants.FAILURE_MESSAGE);
 
 
 		return new RuleResult(PacmanSdkConstants.STATUS_SUCCESS, PacmanRuleConstants.SUCCESS_MESSAGE);
 	}
 
 
-	public boolean isUserAdmin(UserDetail user, AmazonIdentityManagementClient client){
+	public boolean isUserAdmin(UserDetail user, AmazonIdentityManagementClient client) {
 		return userHasAdminFromGroup(user, client) || userHasAdminOrAttachedPolicy(user);
 	}
 
 
-	public boolean userHasAdminOrAttachedPolicy(UserDetail user){
+	public boolean userHasAdminOrAttachedPolicy(UserDetail user) {
 
-		for(PolicyDetail policy : user.getUserPolicyList())
-			if(policy.equals(admin_access))
+		for (PolicyDetail policy : user.getUserPolicyList())
+			if (policy.equals(admin_access))
 				return true;
 
-		for(AttachedPolicy attachedPolicy : user.getAttachedManagedPolicies())
-			if(attachedPolicy.equals(admin_access))
+		for (AttachedPolicy attachedPolicy : user.getAttachedManagedPolicies())
+			if (attachedPolicy.equals(admin_access))
 				return true;
 
 		return false;
 	}
 
-	public boolean userHasAdminFromGroup(UserDetail user, AmazonIdentityManagementClient client){
+	public boolean userHasAdminFromGroup(UserDetail user, AmazonIdentityManagementClient client) {
 		List<String> userGroupList = user.getGroupList();
 
-		for(String group : userGroupList) {
+		for (String group : userGroupList) {
 			for (String policy : client.listGroupPolicies(
 					new ListGroupPoliciesRequest().withGroupName(group)).getPolicyNames())
 				if (policy.equals(admin_access))
@@ -114,8 +120,6 @@ public class CheckAdminMFAEnabled extends BaseRule {
 
 		return false;
 	}
-
-
 
 
 	@Override
