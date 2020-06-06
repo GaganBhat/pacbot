@@ -80,6 +80,7 @@ public class CheckMFADeleteEnabledRule extends BaseRule {
 			logger.info(PacmanRuleConstants.MISSING_CONFIGURATION);
 			throw new InvalidInputException(PacmanRuleConstants.MISSING_CONFIGURATION);
 		}
+
 		if (!resourceAttributes.isEmpty()) {
 			try {
 				map = getClientFor(AWSService.S3, roleIdentifyingString, ruleParam);
