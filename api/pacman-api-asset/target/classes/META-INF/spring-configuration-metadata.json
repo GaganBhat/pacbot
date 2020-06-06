@@ -1,0 +1,32 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.tmobile.pacman.api.asset.repository.AssetRepositoryImpl",
+      "name": "resource",
+      "type": "com.tmobile.pacman.api.asset.repository.AssetRepositoryImpl"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.tmobile.pacman.api.asset.repository.AssetRepositoryImpl",
+      "name": "resource.ad-group-details",
+      "type": "java.util.List<java.util.Map<java.lang.String,java.lang.Object>>"
+    },
+    {
+      "sourceType": "com.tmobile.pacman.api.asset.repository.AssetRepositoryImpl",
+      "name": "resource.all-asset-groups",
+      "type": "java.util.List<java.util.Map<java.lang.String,java.lang.Object>>"
+    },
+    {
+      "sourceType": "com.tmobile.pacman.api.asset.repository.AssetRepositoryImpl",
+      "name": "resource.asset-group-and-domains",
+      "type": "java.util.List<java.util.Map<java.lang.String,java.lang.Object>>"
+    },
+    {
+      "sourceType": "com.tmobile.pacman.api.asset.repository.AssetRepositoryImpl",
+      "name": "resource.events",
+      "type": "java.util.Map<java.lang.String,java.lang.String>"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.tmobile.pacman.api.admin.config.PacmanConfiguration",
+      "name": "",
+      "type": "com.tmobile.pacman.api.admin.config.PacmanConfiguration"
+    },
+    {
+      "sourceType": "com.tmobile.pacman.api.admin.config.GlobalConfig",
+      "name": "compliance-service",
+      "type": "com.tmobile.pacman.api.admin.config.GlobalConfig"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.tmobile.pacman.api.admin.config.PacmanConfiguration",
+      "name": "admin",
+      "type": "com.tmobile.pacman.api.admin.domain.AdminProperty"
+    },
+    {
+      "name": "app.notification.domain",
+      "description": "A description for 'app.notification.domain'",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.tmobile.pacman.api.admin.config.PacmanConfiguration",
+      "name": "aws",
+      "type": "com.tmobile.pacman.api.admin.domain.AWSCredentials"
+    },
+    {
+      "sourceType": "com.tmobile.pacman.api.admin.config.PacmanConfiguration",
+      "name": "elastic-search",
+      "type": "com.tmobile.pacman.api.admin.domain.ElasticSearchProperty"
+    },
+    {
+      "sourceType": "com.tmobile.pacman.api.admin.config.PacmanConfiguration",
+      "name": "job",
+      "type": "com.tmobile.pacman.api.admin.domain.JobProperty"
+    },
+    {
+      "sourceType": "com.tmobile.pacman.api.admin.config.PacmanConfiguration",
+      "name": "rule",
+      "type": "com.tmobile.pacman.api.admin.domain.RuleProperty"
+    },
+    {
+      "name": "rule.s3-bucket-name",
+      "description": "A description for 'rule.s3-bucket-name'",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.tmobile.pacman.api.admin.config.PacmanConfiguration",
+      "name": "security",
+      "type": "com.tmobile.pacman.api.admin.domain.SecurityProperty"
+    },
+    {
+      "sourceType": "com.tmobile.pacman.api.admin.config.PacmanConfiguration",
+      "name": "target-types",
+      "type": "com.tmobile.pacman.api.admin.domain.TargetTypesProperty"
+    }
+  ]
+}

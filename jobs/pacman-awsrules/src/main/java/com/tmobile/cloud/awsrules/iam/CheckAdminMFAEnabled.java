@@ -23,10 +23,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.tmobile.cloud.constants.PacmanRuleConstants.USER_NAME;
 
-
-@PacmanRule(key = "check-if-MFA-enabled-for-global-account-admins", desc = "Check whether MFA is enabled for Global/ Account Level Administrators.", severity = PacmanSdkConstants.SEV_HIGH, category = PacmanSdkConstants.SECURITY)
+@PacmanRule(key = "check-if-MFA-enabled-for-account-admins", desc = "Check whether MFA is enabled for Global/ Account Level Administrators.", severity = PacmanSdkConstants.SEV_HIGH, category = PacmanSdkConstants.SECURITY)
 public class CheckAdminMFAEnabled extends BaseRule {
 
 	String admin_access = "AdministratorAccess";
@@ -42,12 +40,8 @@ public class CheckAdminMFAEnabled extends BaseRule {
 		ruleParamIam.put(PacmanSdkConstants.REGION, Regions.DEFAULT_REGION.getName());
 
 		Map<String, Object> map = null;
-		Annotation annotation = null;
 		AmazonIdentityManagementClient identityManagementClient = null;
 		String roleIdentifyingString = ruleParam.get(PacmanSdkConstants.Role_IDENTIFYING_STRING);
-		String userName = resourceAttributes.get(USER_NAME);
-		String unapprovedActionsParam = ruleParam.get(PacmanRuleConstants.UNAPPROVED_IAM_ACTIONS);
-		String tagsSplitter = ruleParam.get(PacmanSdkConstants.SPLITTER_CHAR);
 
 		String severity = ruleParam.get(PacmanRuleConstants.SEVERITY);
 		String category = ruleParam.get(PacmanRuleConstants.CATEGORY);
@@ -55,10 +49,15 @@ public class CheckAdminMFAEnabled extends BaseRule {
 		MDC.put(PacmanSdkConstants.EXECUTION_ID, ruleParam.get(PacmanSdkConstants.EXECUTION_ID));
 		MDC.put(PacmanSdkConstants.RULE_ID, ruleParam.get(PacmanSdkConstants.RULE_ID));
 
+		if (!PacmanUtils.doesAllHaveValue(severity, category)) {
+			logger.info(PacmanRuleConstants.MISSING_CONFIGURATION);
+			throw new InvalidInputException(PacmanRuleConstants.MISSING_CONFIGURATION);
+		}
 
 		try {
-			map = getClientFor(AWSService.IAM, roleIdentifyingString, ruleParamIam);
-			identityManagementClient = (AmazonIdentityManagementClient) map.get(PacmanSdkConstants.CLIENT);
+			identityManagementClient = (AmazonIdentityManagementClient)
+					getClientFor(AWSService.IAM, roleIdentifyingString, ruleParamIam)
+					.get(PacmanSdkConstants.CLIENT);
 		} catch (Exception e) {
 			logger.error(PacmanRuleConstants.UNABLE_TO_GET_CLIENT, e);
 			throw new InvalidInputException(PacmanRuleConstants.UNABLE_TO_GET_CLIENT, e);
@@ -71,6 +70,9 @@ public class CheckAdminMFAEnabled extends BaseRule {
 		for (UserDetail userDetail : userDetails)
 			if (isUserAdmin(userDetail, identityManagementClient))
 				adminUsers.add(userDetail);
+
+		logger.debug("=== FOUND " + adminUsers.size() + "  ADMINS IN ACCOUNT ===");
+
 
 		for(UserDetail admin : adminUsers)
 			if (identityManagementClient.listMFADevices(

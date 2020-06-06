@@ -1,0 +1,17 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.tmobile.pacman.api.commons.config.SwaggerServicesConfig",
+      "name": "api",
+      "type": "com.tmobile.pacman.api.commons.config.SwaggerServicesConfig"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.tmobile.pacman.api.commons.config.SwaggerServicesConfig",
+      "name": "api.services",
+      "type": "java.util.List<com.tmobile.pacman.api.commons.service.SwaggerService>"
+    }
+  ]
+}
