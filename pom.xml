@@ -28,6 +28,20 @@
         </developer>
     </developers>
 
+<!--    <dependencies>-->
+<!--        <dependency>-->
+<!--            <groupId>com.tmobile.pacman</groupId>-->
+<!--            <artifactId>batch-commons</artifactId>-->
+<!--            <version>1.0.0-SNAPSHOT</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>com.tmobile.pacman</groupId>-->
+<!--            <artifactId>rule-engine</artifactId>-->
+<!--            <version>0.0.1</version>-->
+<!--            <scope>provided</scope>-->
+<!--        </dependency>-->
+<!--    </dependencies>-->
+
     <organization>
         <name>T-Mobile</name>
         <url>https://www.t-mobile.com</url>
@@ -46,6 +60,7 @@
                 <module>api</module>
 		<module>jobs</module>
 		<module>webapp</module>
+
     </modules>
 
 </project>

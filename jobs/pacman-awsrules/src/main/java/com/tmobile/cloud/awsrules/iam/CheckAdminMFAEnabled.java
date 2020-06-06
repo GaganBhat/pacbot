@@ -1,10 +1,8 @@
 package com.tmobile.cloud.awsrules.iam;
 
 import com.amazonaws.regions.Regions;
-import com.amazonaws.services.identitymanagement.AmazonIdentityManagement;
 import com.amazonaws.services.identitymanagement.AmazonIdentityManagementClient;
 import com.amazonaws.services.identitymanagement.model.*;
-import com.amazonaws.services.s3.AmazonS3Client;
 import com.tmobile.cloud.awsrules.utils.PacmanUtils;
 import com.tmobile.cloud.constants.PacmanRuleConstants;
 import com.tmobile.pacman.commons.AWSService;
@@ -49,6 +47,8 @@ public class CheckAdminMFAEnabled extends BaseRule {
 		MDC.put(PacmanSdkConstants.EXECUTION_ID, ruleParam.get(PacmanSdkConstants.EXECUTION_ID));
 		MDC.put(PacmanSdkConstants.RULE_ID, ruleParam.get(PacmanSdkConstants.RULE_ID));
 
+		Annotation annotation = null;
+
 		if (!PacmanUtils.doesAllHaveValue(severity, category)) {
 			logger.info(PacmanRuleConstants.MISSING_CONFIGURATION);
 			throw new InvalidInputException(PacmanRuleConstants.MISSING_CONFIGURATION);
@@ -64,6 +64,8 @@ public class CheckAdminMFAEnabled extends BaseRule {
 		}
 
 
+		annotation = Annotation.buildAnnotation(ruleParam,Annotation.Type.ISSUE);
+
 		List<UserDetail> userDetails = identityManagementClient.getAccountAuthorizationDetails().getUserDetailList();
 		List<UserDetail> adminUsers = new ArrayList<>();
 
@@ -73,13 +75,19 @@ public class CheckAdminMFAEnabled extends BaseRule {
 
 		logger.debug("=== FOUND " + adminUsers.size() + "  ADMINS IN ACCOUNT ===");
 
-
+		boolean hasFailed = false;
 		for(UserDetail admin : adminUsers)
 			if (identityManagementClient.listMFADevices(
 					new ListMFADevicesRequest().withUserName(admin.getUserName()))
-				.getMFADevices().isEmpty())
-				return
-						new RuleResult(PacmanSdkConstants.STATUS_FAILURE, PacmanRuleConstants.FAILURE_MESSAGE);
+				.getMFADevices().isEmpty()) {
+				hasFailed = true;
+				annotation.put(PacmanRuleConstants.ISSUE, "Admin " + admin.getUserName() + " has no MFA devices!");
+			}
+
+		logger.debug("======== Global Admin MFA Account Check Started =========");
+
+		if(hasFailed)
+			return new RuleResult(PacmanSdkConstants.STATUS_FAILURE, PacmanRuleConstants.FAILURE_MESSAGE);
 
 
 		return new RuleResult(PacmanSdkConstants.STATUS_SUCCESS, PacmanRuleConstants.SUCCESS_MESSAGE);
@@ -126,8 +134,10 @@ public class CheckAdminMFAEnabled extends BaseRule {
 
 	@Override
 	public String getHelpText() {
-		return null;
+		return "Check whether MFA is enabled for Global/ Account Level Administrators.";
 	}
+
+
 
 
 }
