@@ -19,10 +19,13 @@ import com.tmobile.pacman.commons.rule.BaseRule;
 import com.tmobile.pacman.commons.rule.PacmanRule;
 import com.tmobile.pacman.commons.rule.RuleResult;
 
+
 /**
  * Possible network Just In Time (JIT) access will be monitored by Azure
  * Security Center as recommendations
  */
+
+
 
 @PacmanRule(key = "check-for-azure-policy-evaluation-results", desc = "Azure policy evaluation results for different target types", severity = PacmanSdkConstants.SEV_HIGH, category = PacmanSdkConstants.SECURITY)
 public class AzurePolicyEvaluationRule extends BaseRule {

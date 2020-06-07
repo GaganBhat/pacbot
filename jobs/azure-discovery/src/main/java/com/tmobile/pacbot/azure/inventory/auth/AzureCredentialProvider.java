@@ -16,6 +16,10 @@ import com.microsoft.azure.management.Azure;
 import com.microsoft.azure.management.Azure.Authenticated;
 import com.tmobile.pacman.commons.utils.CommonUtils;
 
+import com.tmobile.pacbot.azure.inventory.auth.AzureCredentialProvider;
+
+import com.tmobile.pacbot.azure.inventory.auth.AzureCredentialProvider;
+
 @Component
 public class AzureCredentialProvider {
 
